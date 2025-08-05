@@ -1,0 +1,198 @@
+{
+  "_id": {
+    "acc": 1200000000,
+    "k": 1753162568
+  },
+  "name": "My New WhatsApp Message Campaign",
+  "type": 10,
+  "device": [0],
+  "segment_definition": "with common properties such as Phone = 919987102608",
+  "status": 3,
+  "target_type": 1,
+  "convGoal": null,
+  "content_api_info": {},
+  "selectedCatalogs": {},
+  "has_liquid": false,
+  "clickTracking": true,
+  "r": {
+    "n": 1
+  },
+  "content_api_namespaces": [],
+  "content": {
+    "0": {
+      "msg": {
+        "wzrk_default": {
+          "_id": "test_jay_order_delivery_2",
+          "body": {
+            "type": "template",
+            "templateCategory": "UTILITY",
+            "body": {
+              "type": "Text",
+              "text": "Hi $replacement$##n[ User]$/replacement$, {% if Profile.Language  == \"French\"%} Bonjour!{% else %}Good Morning!{% endif %}. Your order is out for delivery and will arrive by today at 8 pm.",
+              "replacements": ["$replacement$##n[ User]$/replacement$"]
+            },
+            "buttons": [
+              {
+                "button_type": "call_to_action",
+                "action_type": "flow",
+                "text": "Track your order",
+                "action": {
+                  "flow_token": "21_21_1200000000_1690826944850328",
+                  "flow_action_data": {
+                    "name": "Jay",
+                    "city": "Mumbai",
+                    "age": "20",
+                    "toDisplay": "Hi, Jay"
+                  }
+                }
+              }
+            ]
+          },
+          "locale": "en",
+          "noReplaceLinks": {
+            "0": "https://www.google.com"
+          }
+        }
+      }
+    }
+  },
+  "q": {
+    "0": {
+      "app": [],
+      "appn": [],
+      "dev": [],
+      "ev": -1,
+      "p": [],
+      "px": [
+        {
+          "k": -3,
+          "o": 1,
+          "v": {
+            "$numberLong": "919987102608"
+          },
+          "dt": 1,
+          "k_name": "Phone"
+        }
+      ],
+      "r": [],
+      "sq": [],
+      "sx": [],
+      "u": 1,
+      "f": 20250720,
+      "t": 20250720,
+      "teq": {
+        "f": -1,
+        "t": 20250722,
+        "tdl": [18, 19],
+        "ev": 0,
+        "c": -1,
+        "i": 0,
+        "o": 3
+      },
+      "d": 15
+    }
+  },
+  "validity": null,
+  "qm": {
+    "whoQuery": {
+      "app": [],
+      "appn": [],
+      "dev": [],
+      "ev": -1,
+      "p": [],
+      "px": [
+        {
+          "k": -3,
+          "o": 1,
+          "v": {
+            "$numberLong": "919987102608"
+          },
+          "dt": 1,
+          "k_name": "Phone"
+        }
+      ],
+      "r": [],
+      "sq": [],
+      "sx": [],
+      "u": 1,
+      "f": 20250720,
+      "t": 20250720
+    },
+    "segmentType": "batch",
+    "segmentName": "New Segment",
+    "segmentId": "adhoc",
+    "campaignType": "single",
+    "msg": {
+      "content_api_namespaces": [],
+      "_id": "test_jay_order_delivery_2",
+      "templateId": "test_jay_order_delivery_2",
+      "body": {
+        "type": "Text",
+        "text": "Hi {{1}}, {% if Profile.Language  == \"French\"%} Bonjour!{% else %}Good Morning!{% endif %}. Your order is out for delivery and will arrive by today at 8 pm.",
+        "replacements": ["$replacement$##n[ User]$/replacement$"]
+      },
+     "buttons": [
+              {
+                "button_type": "call_to_action",
+                "action_type": "flow",
+                "text": "Track your order",
+                "action": {
+                  "flow_token": "21_21_1200000000_1690826944850328",
+                  "flow_action_data": {
+                    "name": "Jay",
+                    "city": "Mumbai",
+                    "age": "20",
+                    "toDisplay": "Hi, Jay"
+                  }
+                }
+              }
+            ],
+      "locale": "en",
+      "customProps": [],
+      "templateCategory": "UTILITY"
+    },
+    "provider_id": 1689244432,
+    "recommendationList": [],
+    "editorConfigured": true,
+    "sendInUserTz": false,
+    "userTzWrapAround": true,
+    "senderTz": null,
+    "startTime": null,
+    "validity": null,
+    "device": [0],
+    "endTime": null
+  },
+  "tr_cap": true,
+  "updated_ts": {
+    "$numberLong": "1753162568614"
+  },
+  "provider_id": 1689244432,
+  "provider_nickname": "",
+  "recommendationFilters": {},
+  "prefixExclMap": {},
+  "advance_settings": {
+    "throttlingSetting": {
+      "throttlingApplied": false
+    }
+  },
+  "c-by": "jay.kotak@clevertap.com",
+  "bestTimeV2Enabled": true,
+  "startTime": 1753162568,
+  "u-by": "jay.kotak@clevertap.com",
+  "updateExcludingList": true,
+  "cg": {},
+  "statusChangedTS": 1753164888,
+  "newCampaignUI": true,
+  "feature": 0,
+  "version": 1,
+  "runningCampaignVersion": 1,
+  "clonedFromTarget": 1753107768,
+  "provisionalID": "d0f96244-4e3c-49c9-a08d-a74246c2bb87_1753162568635",
+  "q_user_device_counts": {
+    "devices": 1,
+    "users": 1
+  },
+  "q_counts": {
+    "0": 1
+  }
+}
