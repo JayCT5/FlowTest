@@ -8,20 +8,20 @@
 import axios from "axios";
 
 const get_name = {
-  "9888907479": "Varun",
-  "9987102608": "Jay",
-  "9930079420": "Deepak",
-  "8554075758": "Puranjay",
-  "7989960625": "Mahesh",
-  "9887151689": "Anshul",
-  "9304180922": "Rakesh",
-  "9167050204": "Arya"
+  9888907479: "Varun",
+  9987102608: "Jay",
+  9930079420: "Deepak",
+  8554075758: "Puranjay",
+  7989960625: "Mahesh",
+  9887151689: "Anshul",
+  9304180922: "Rakesh",
+  9167050204: "Arya",
 };
 
 export const getNextScreen = async (decryptedBody) => {
   const { screen, data, version, action, flow_token } = decryptedBody;
   console.log(decryptedBody.data);
-  console.log("action: "+ action);
+  console.log("action: " + action);
 
   // handle health check request
   if (action === "ping") {
@@ -44,13 +44,13 @@ export const getNextScreen = async (decryptedBody) => {
 
   // handle initial request when opening the flow
   if (action === "INIT") {
-     return {
+    return {
       screen: "WELCOME",
       data: {
         // custom data for the screen
         name: `${get_name[flow_token]}`,
-        city:'Mumbai',
-        age: '20',
+        city: "Mumbai",
+        age: "20",
         toDisplay: `Hi, ${get_name[flow_token]}`,
       },
     };
@@ -63,7 +63,7 @@ export const getNextScreen = async (decryptedBody) => {
         flow_token: flow_token,
       },
     };
-    
+
     return {
       screen: "MY_SCREEN",
       data: {
@@ -114,8 +114,11 @@ export const getNextScreen = async (decryptedBody) => {
             screen: "YOUR_AGE",
             data: {
               age: res.data.age.toString(),
-              name: decryptedBody.data.name, flow_token: flow_token,
-              toDisplay:`Hi ${decryptedBody.data.name}, your expected age is ${res.data.age.toString()}.`,
+              name: decryptedBody.data.name,
+              flow_token: flow_token,
+              toDisplay: `Hi ${
+                decryptedBody.data.name
+              }, your expected age is ${res.data.age.toString()}.`,
               extension_message_response: {
                 params: {
                   flow_token: flow_token,
@@ -123,26 +126,24 @@ export const getNextScreen = async (decryptedBody) => {
               },
             },
           };
-        };
-        case " if(screen==="SIGNUP"){
-      resp = {
-        screen: "TRAVEL_PACKAGES",
-        data:{...data},
-      }
-    }
-    if(screen=="TRAVEL_PACKAGES"){
-        resp = {
-          screen: "THANKYOU",
-          data:{...data},
         }
-      }
-    }"
+      case "SIGNUP":
+        return {
+          screen: "TRAVEL_PACKAGES",
+          data: { ...data },
+        };
+      case "TRAVEL_PACKAGES":
+        return {
+          screen: "THANKYOU",
+          data: { ...data },
+        };
+
         return {
           screen: "WEATHER",
           data: {
             name: decryptedBody.data.name,
             flow_token: flow_token,
-            toDisplay:'Please enter your city!',
+            toDisplay: "Please enter your city!",
             extension_message_response: {
               params: {
                 flow_token: flow_token,
@@ -156,18 +157,21 @@ export const getNextScreen = async (decryptedBody) => {
         );
         console.log("Response weather age api");
         console.log(res.data.description);
-         return {
-              screen: "TODAYS_WEATHER",
-              data: {
-                name: decryptedBody.data.name, weather: res.data.description, city: decryptedBody.data.city, flow_token: flow_token,
-                toDisplay:`Expected weather in city ${decryptedBody.data.city} is, ${res.data.description}`,
-                extension_message_response: {
-                  params: {
-                    flow_token: flow_token,
-                  },
-                },
+        return {
+          screen: "TODAYS_WEATHER",
+          data: {
+            name: decryptedBody.data.name,
+            weather: res.data.description,
+            city: decryptedBody.data.city,
+            flow_token: flow_token,
+            toDisplay: `Expected weather in city ${decryptedBody.data.city} is, ${res.data.description}`,
+            extension_message_response: {
+              params: {
+                flow_token: flow_token,
               },
-            };
+            },
+          },
+        };
       default:
         break;
     }
