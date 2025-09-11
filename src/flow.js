@@ -123,7 +123,20 @@ export const getNextScreen = async (decryptedBody) => {
               },
             },
           };
+        };
+        case " if(screen==="SIGNUP"){
+      resp = {
+        screen: "TRAVEL_PACKAGES",
+        data:{...data},
+      }
+    }
+    if(screen=="TRAVEL_PACKAGES"){
+        resp = {
+          screen: "THANKYOU",
+          data:{...data},
         }
+      }
+    }"
         return {
           screen: "WEATHER",
           data: {
